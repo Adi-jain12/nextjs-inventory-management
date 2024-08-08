@@ -39,9 +39,9 @@ const DashboardLayout = ({ children }: Props) => {
 		>
 			<Sidebar />
 			<main
-				className={`flex flex-col w-full h-full py-7 px-7 bg-gray-50 ${
-					isSidebarCollapsed ? 'md:pl-24' : 'md:pl-72'
-				}`}
+				className={`flex flex-col w-full h-full py-7 px-7 ${
+					isDarkMode ? 'bg-gray-50' : 'bg-slate-100'
+				} ${isSidebarCollapsed ? 'md:pl-24' : 'md:pl-72'}`}
 			>
 				<Navbar />
 
