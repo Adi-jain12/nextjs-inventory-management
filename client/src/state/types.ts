@@ -6,6 +6,13 @@ export type Product = {
 	stockQuantity: number;
 };
 
+export type NewProduct = {
+	name: string;
+	price: number;
+	rating?: number;
+	stockQuantity: number;
+};
+
 export type SalesSummary = {
 	salesSummaryId: string;
 	totalValue: number;
