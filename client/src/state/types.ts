@@ -47,3 +47,9 @@ export type DashboardMetrics = {
 	expenseSummary: ExpenseSummary[];
 	expenseBySummaryCategory: ExpenseByCategorySummary[];
 };
+
+export type User = {
+	userId: string;
+	name: string;
+	email: string;
+};

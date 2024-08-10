@@ -1,10 +1,16 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { DashboardMetrics, NewProduct, Product } from './types';
+import {
+	DashboardMetrics,
+	ExpenseByCategorySummary,
+	NewProduct,
+	Product,
+	User,
+} from './types';
 
 export const api = createApi({
 	baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_API_BASE_URL }),
 	reducerPath: 'api',
-	tagTypes: ['DashboardMetrics', 'Products'],
+	tagTypes: ['DashboardMetrics', 'Products', 'Users', 'Expenses'],
 	endpoints: (build) => ({
 		/* 
 		Here, in <DashboardMetrics, void> the first argument is what type of data we are getting from backend and
@@ -39,6 +45,16 @@ export const api = createApi({
 		  */
 			invalidatesTags: ['Products'],
 		}),
+
+		getUsers: build.query<User[], void>({
+			query: () => '/api/v1/users',
+			providesTags: ['Users'],
+		}),
+
+		getExpensesByCategory: build.query<ExpenseByCategorySummary[], void>({
+			query: () => '/api/v1/expenses',
+			providesTags: ['Expenses'],
+		}),
 	}),
 });
 
@@ -50,4 +66,6 @@ export const {
 	useGetDashboardMetricsQuery,
 	useGetProductsQuery,
 	useCreateProductMutation,
+	useGetUsersQuery,
+	useGetExpensesByCategoryQuery,
 } = api;

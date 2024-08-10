@@ -6,6 +6,8 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import dashboardRoutes from './routes/dashboardRoutes';
 import productRoutes from './routes/productRoutes';
+import userRoutes from './routes/userRoutes';
+import expenseRoutes from './routes/expenseRoutes';
 dotenv.config();
 
 const app = express();
@@ -20,6 +22,8 @@ app.use(cors());
 
 app.use('/api/v1/dashboard', dashboardRoutes);
 app.use('/api/v1/products', productRoutes);
+app.use('/api/v1/users', userRoutes);
+app.use('/api/v1/expenses', expenseRoutes);
 
 const port = process.env.PORT || 3001;
 

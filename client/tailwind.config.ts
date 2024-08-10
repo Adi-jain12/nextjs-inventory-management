@@ -35,7 +35,6 @@ const generateThemeObject = (colors: any, mapping: any, invert = false) => {
 			theme[color][key] = colors[color][shadeKey];
 		});
 	});
-
 	return theme;
 };
 
@@ -47,7 +46,6 @@ const themes = {
 		...lightTheme,
 		white: '#ffffff',
 	},
-
 	dark: {
 		...darkTheme,
 		white: colors.gray['950'],
