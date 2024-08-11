@@ -45,7 +45,7 @@ export type DashboardMetrics = {
 	salesSummary: SalesSummary[];
 	purchaseSummary: PurchaseSummary[];
 	expenseSummary: ExpenseSummary[];
-	expenseBySummaryCategory: ExpenseByCategorySummary[];
+	updatedExpenseByCategorySummary: ExpenseByCategorySummary[];
 };
 
 export type User = {
