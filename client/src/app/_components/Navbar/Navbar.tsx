@@ -5,6 +5,7 @@ import { Bell, Menu, Moon, Settings, Sun } from 'lucide-react';
 import Link from 'next/link';
 import { useAppDispatch, useAppSelector } from '@/app/redux';
 import { setIsDarkMode, setIsSidebarCollapsed } from '@/state';
+import Image from 'next/image';
 
 const Navbar = () => {
 	const isSidebarCollapsed = useAppSelector(
@@ -66,7 +67,15 @@ const Navbar = () => {
 
 					<hr className="w-0 h-7 border border-solid border-1 border-gray-300 mx-3" />
 					<div className="flex items-center gap-3 cursor-pointer">
-						<div className="w-9 h-9">Image</div>
+						<div className="w-9 h-9">
+							<Image
+								src="https://my-s3-inventorymanagementbucket.s3.ap-south-1.amazonaws.com/profile.jpg"
+								alt="Profile Image"
+								width={50}
+								height={50}
+								className="rounded-full h-full object-cover"
+							/>
+						</div>
 						<span className="font-semibold">Aditya Jain</span>
 					</div>
 				</div>
