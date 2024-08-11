@@ -3,3 +3,5 @@ node_modules
 .env
 dist/
 NOTES.md
+
+aws-ec2-instructions.md
