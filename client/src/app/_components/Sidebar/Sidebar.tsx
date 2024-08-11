@@ -10,6 +10,7 @@ import {
 	User,
 } from 'lucide-react';
 import SidebarLink from './SidebarLink';
+import Image from 'next/image';
 
 const Sidebar = () => {
 	const dispatch = useAppDispatch();
@@ -33,7 +34,13 @@ const Sidebar = () => {
 					isSidebarCollapsed ? 'px-5' : 'px-8'
 				}`}
 			>
-				<div>Logo</div>
+				<Image
+					src="https://my-s3-inventorymanagementbucket.s3.ap-south-1.amazonaws.com/logo.png"
+					alt="Adstock-logo"
+					width={27}
+					height={27}
+					className="rounded w-8"
+				/>
 				<h1
 					className={`${
 						isSidebarCollapsed ? 'hidden' : 'block'
